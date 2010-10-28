@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+      <title>canvas hello world</title>
+      <style>
+         canvas {
+         	margin: 0 auto;
+         	display: block;
+         	padding: 1px;
+         }
+         canvas:hover {
+         	border: 1px solid #eee;
+         	padding: 0;
+         }
+      </style>
+   </head>
+
+   <body>
+      <canvas id="canvas" style="border: 1px solid;" width="500" height="500">
+         Update your browser please.
+      </canvas>
+
+      <script>
+         var dblRc=1.732;
+         var iHt;
+
+         function main() {
+            var context = document.getElementById('canvas').getContext('2d');
+            drawTriangle(250, 100, 200, context, 4);
+         }
+
+         function drawTriangle(ix, iy, ilg, context, step) { 
+			//console.log(ilg);
+
+			if (step > 0) {
+            	iHt = (ilg * (dblRc/2)) ;
+
+               var tmp1 = ix-(ilg/2);
+               var tmp2 = ix+(ilg/2);
+               var tmp3 = iy+iHt;
+
+               context.beginPath(); 
+               context.moveTo(ix, iy);
+               context.lineTo(tmp1, tmp3);
+               context.moveTo(tmp1, tmp3);
+               context.lineTo(tmp2, tmp3);
+               context.moveTo(ix, iy);
+               context.lineTo(tmp2, tmp3);
+               context.stroke();
+               context.closePath();
+
+               drawTriangle(ix, iy+iHt, ilg/2, context, step - 1); // bottom triangle
+               drawTriangle(ix-ilg/2, iy, ilg/2, context, step - 1); // left triangle
+               drawTriangle(ix+ilg/2, iy, ilg/2, context, step - 1); // right triangle
+            }
+         }
+         window.addEventListener("load", main, true); 
+      </script>
+   </body>
+</html>
