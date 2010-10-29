@@ -2,7 +2,7 @@
 <html>
    <head>
       <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-      <title>Draw the rectangle version Serpinsky fractal</title>
+      <title>Draw the rectangle version of Serpinsky fractal v2</title>
       <style>
          canvas {
             margin: 0 auto;
@@ -33,9 +33,9 @@
          }
 
          function drawSquare(x, y, w, context, color) { 
-            //console.log(ilg);
+            console.log(ilg);
 
-            if (Math.round(w) > 0) {
+            if (Math.round(w) > 5) {
                context.beginPath();
                context.fillStyle = color; 
                context.fillRect(x, y, w, w);
@@ -44,10 +44,15 @@
 
                var newW = (w / 2);
 
-               drawSquare((x + w) + newW, y + (newW / 2), newW, context, '#990000');
-               drawSquare((x - w), y + (newW / 2), newW, context, '#990000');
-               drawSquare(x + (newW / 2), (y - w), newW, context, '#990000');
-               drawSquare(x + (newW / 2), (y + w) + newW, newW, context, '#990000');
+               drawSquare((x + w) + newW, y + (newW / 2), newW, context, '#990000'); // right rect
+               drawSquare((x - w), y + (newW / 2), newW, context, '#990000'); // left rect
+               drawSquare(x + (newW / 2), (y - w), newW, context, '#990000'); // top rect
+               drawSquare(x + (newW / 2), (y + w) + newW, newW, context, '#990000'); // bottom rect
+
+               drawSquare((x - w), (y - w), newW, context, '#990000'); // top left rect
+               drawSquare((x + w) + newW, (y - w), newW, context, '#990000'); // top right rect
+               drawSquare((x + w) + newW, (y + w) + newW, newW, context, '#990000'); // bottom right rect
+               drawSquare((x - w), (y + w) + newW, newW, context, '#990000'); // bottom left rect
             }
          }
          window.addEventListener("load", main, true); 
