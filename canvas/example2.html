@@ -5,13 +5,13 @@
       <title>Draw the rectangle version Serpinsky fractal</title>
       <style>
          canvas {
-         	margin: 0 auto;
-         	display: block;
-         	padding: 1px;
+            margin: 0 auto;
+            display: block;
+            padding: 1px;
          }
          canvas:hover {
-         	border: 1px solid #eee;
-         	padding: 0;
+            border: 1px solid #eee;
+            padding: 0;
          }
       </style>
    </head>
@@ -25,29 +25,29 @@
          function main() {
             var context = document.getElementById('canvas').getContext('2d');
 
-			var squareSize = 100;
-			var xOrigin = (500 / 2) - (squareSize  / 2);
-			var yOrigin = xOrigin;
+            var squareSize = 100;
+            var xOrigin = (500 / 2) - (squareSize  / 2);
+            var yOrigin = xOrigin;
 
             drawSquare(xOrigin, yOrigin, squareSize, context, '#990000');
          }
 
          function drawSquare(x, y, w, context, color) { 
-			//console.log(ilg);
+            //console.log(ilg);
 
-			if (Math.round(w) > 0) {
+            if (Math.round(w) > 0) {
                context.beginPath();
-			   context.fillStyle = color; 
-			   context.fillRect(x, y, w, w);
+               context.fillStyle = color; 
+               context.fillRect(x, y, w, w);
                context.stroke();
                context.closePath();
 
-			   var newW = (w / 2);
+               var newW = (w / 2);
 
-	           drawSquare((x + w) + newW, y + (newW / 2), newW, context, '#990000');
-	           drawSquare((x - w), y + (newW / 2), newW, context, '#990000');
-	           drawSquare(x + (newW / 2), (y - w), newW, context, '#990000');
-	           drawSquare(x + (newW / 2), (y + w) + newW, newW, context, '#990000');
+               drawSquare((x + w) + newW, y + (newW / 2), newW, context, '#990000');
+               drawSquare((x - w), y + (newW / 2), newW, context, '#990000');
+               drawSquare(x + (newW / 2), (y - w), newW, context, '#990000');
+               drawSquare(x + (newW / 2), (y + w) + newW, newW, context, '#990000');
             }
          }
          window.addEventListener("load", main, true); 
