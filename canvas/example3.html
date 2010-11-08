@@ -33,7 +33,7 @@
          }
 
          function drawSquare(x, y, w, context, color) { 
-            console.log(ilg);
+            //console.log(x);
 
             if (Math.round(w) > 5) {
                context.beginPath();
@@ -44,10 +44,10 @@
 
                var newW = (w / 2);
 
-               drawSquare((x + w) + newW, y + (newW / 2), newW, context, '#990000'); // right rect
-               drawSquare((x - w), y + (newW / 2), newW, context, '#990000'); // left rect
-               drawSquare(x + (newW / 2), (y - w), newW, context, '#990000'); // top rect
-               drawSquare(x + (newW / 2), (y + w) + newW, newW, context, '#990000'); // bottom rect
+               drawSquare((x + w) + newW + 5, y + (newW / 2), newW, context, '#990000'); // right rect
+               drawSquare((x - w) -5, y + (newW / 2), newW, context, '#990000'); // left rect
+               drawSquare(x + (newW / 2) -5, (y - w), newW, context, '#990000'); // top rect
+               drawSquare(x + (newW / 2) +5, (y + w) + newW, newW, context, '#990000'); // bottom rect
 
                drawSquare((x - w), (y - w), newW, context, '#990000'); // top left rect
                drawSquare((x + w) + newW, (y - w), newW, context, '#990000'); // top right rect
