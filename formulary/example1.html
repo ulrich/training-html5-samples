@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+      <title>formulary example1</title>
+   </head>
+
+   <body>
+	  <p>Form with placeholder</p>
+      <form id="with-placeholder">
+        <input type="text" name="first-name" placeholder="John"/><br/>
+        <input type="text" name="last-name" placeholder="Doe"/><br/>
+        <input type="submit" name="submit" value="Save"/>
+      </form>
+
+	  <p>Form with focus</p>
+      <form id="with-autofocus">
+        <input type="text" name="first-name" autofocus/><br/>
+        <input type="text" name="last-name"/><br/>
+        <input type="submit" name="submit" value="Save"/>
+      </form>
+
+	  <p>Form with required field</p>
+      <form id="with-required-field">
+        <input required="required" type="text" name="first-name" value=""/><br/>
+        <input type="text" name="last-name"/><br/>
+        <input type="submit" name="submit" value="Save"/>
+      </form>
+
+	  <p>Form with email validation</p>
+	  <form id="with-validation">
+	     <label>News Letter : </label><br/>
+	     <input type="email" placeholder="mail@provider.com" required /><br/>
+      	<label>Votre site Web : </label><br/>
+      	<input type="url" name="yourWebSite" placeholder="www.yoursite.com"/><br/>
+      	<input  type="submit" name="submit" value="Inscription"/>
+	  </form>
+
+    </body>
+</html>
